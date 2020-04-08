@@ -1,0 +1,3 @@
+[submodule "fengsha_thres_map"]
+	path = fengsha_thres_map
+	url = https://github.com/noaa-oar-arl/fengsha_thres_map.git
