@@ -101,7 +101,7 @@ if __name__ == "__main__":
     #thres = array(args.threshold_velocity.split(','),dtype=float)
     res = args.resolution
     output_fname = args.output_filename
-    scale = args.scale
+    scale = float(args.scale)
 
     print('----------------------------------------------------')
     print(' Beginning program' )
@@ -117,6 +117,6 @@ if __name__ == "__main__":
         uth = open_fv3_binary(uthres, res=res, tile=i).uthr
         ssm = open_fv3_binary(ssm_file, res=res, tile=i).ssm
         
-        th = uth * np.sin(ssm/scale) + uth
+        th = uth.astype(float) * np.sin(ssm.astype(float)/scale) + uth.astype(float)
         print('     Output: {}'.format(output))
         to_prepchem_binary(th.T,fname=output)
