@@ -2,7 +2,6 @@
 
 
 
-#f=${PWD}/../fengsha/bsmfv3
 f=../../../fengsha/bsmfv3
 directory=`pwd`
 res='C96'
